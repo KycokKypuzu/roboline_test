@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ productcategory.name }}</h1>
+    <p>{{ productcategory.description }}</p>
+
+    <h2>Продукты</h2>
+    <ul>
+        {% for product in productcategory.products.all %}
+            <li><a href="{% url 'rl_app:product_detail' productcategory_id=productcategory.id product_id=product.id %}">{{ product.name }}</a></li>
+        {% empty %}
+            <li>В этой категории пока нет продуктов</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

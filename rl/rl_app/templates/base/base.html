@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <!-- Общий заголовок для всех страниц -->
+        <h1>Тестовый сайт</h1>
+    </header>
+
+    <nav>
+        <!-- Навигационное меню -->
+        <a href="{% url 'rl_app:index' %}">Главная страница</a>
+        <!-- Другие ссылки -->
+    </nav>
+
+    <main>
+        {% block content %}
+        <!-- Основное содержимое страницы -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <!-- Общий футер для всех страниц -->
+    </footer>
+</body>
+</html>

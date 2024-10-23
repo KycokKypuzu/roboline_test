@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Список категорий продуктов</h1>
+    <p><a href="{% url 'rl_app:create_productcategory' %}">Добавить категорию</a></p>
+    <ul>
+        {% for productcategory in productcategory_list %}
+            <li><a href="{% url 'rl_app:productcategory_detail' productcategory.id %}">{{ productcategory.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
