@@ -8,6 +8,11 @@
     <h1>{{ productcategory.name }}</h1>
     <p>{{ productcategory.description }}</p>
 
+    <p><a href="{% url 'rl_app:add_product_to_productcategory' productcategory_id=productcategory.id %}">Добавить новый продукт</a></p>
+
+    <p><a href="{% url 'rl_app:update_productcategory' productcategory_id=productcategory.id %}">Изменить категорию продукта</a></p>
+
+    <p><a href="{% url 'rl_app:delete_productcategory' productcategory.id %}"onclick="return confirm('Вы уверены, что хотите удалить эту категорию?');">Удалить категорию</a></p>
     <h2>Продукты</h2>
     <ul>
         {% for product in productcategory.products.all %}

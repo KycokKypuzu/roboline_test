@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <h1>Удаление категории</h1>
+    <p>Вы уверены, что хотите удалить категорию "{{ productcategory.name }}"?</p>
+
+    <form action="{% url 'rl_app:delete_productcategory' productcategory.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Удалить">
+        <a href="{% url 'rl_app:productcategory_detail' productcategory.id %}">Отмена</a>
+    </form>
+{% endblock %}

@@ -9,5 +9,8 @@
     <p>{{ product.description }}</p>
     <p>{{ product.price }}</p>
 
+    <a href="{% url 'rl_app:update_product' productcategory_id=product.category_id.id product_id=product.id %}">Изменить продукт</a>
+
+    <p><a href="{% url 'rl_app:delete_product' productcategory_id=product.category_id.id product_id=product.id %}" onclick="return confirm('Вы уверены, что хотите удалить этот продукт?');">Удалить продукт</a></p>
 </body>
 </html>

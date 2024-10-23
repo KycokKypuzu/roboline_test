@@ -4,6 +4,10 @@ class ProductCategory(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(blank=True)
 
+    def __str__(self):
+        return self.name
+    
+
 class Product(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
@@ -12,3 +16,6 @@ class Product(models.Model):
         ProductCategory,
         related_name='products',
         on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name

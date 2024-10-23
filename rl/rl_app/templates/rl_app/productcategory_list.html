@@ -9,7 +9,7 @@
     <p><a href="{% url 'rl_app:create_productcategory' %}">Добавить категорию</a></p>
     <ul>
         {% for productcategory in productcategory_list %}
-            <li><a href="{% url 'rl_app:productcategory_detail' productcategory.id %}">{{ productcategory.name }}</a></li>
+            <li><a href="{% url 'rl_app:productcategory_detail' productcategory_id=productcategory.id %}">{{ productcategory.name }}</a></li>
         {% endfor %}
     </ul>
 </body>
